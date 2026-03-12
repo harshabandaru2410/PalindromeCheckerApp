@@ -1,6 +1,8 @@
 import java.util.Stack;
 import java.util.Queue;
 import java.util.LinkedList;
+import java.util.Deque;
+import java.util.ArrayDeque;
 
 public class PalindromeCheckerApp {
 
@@ -48,12 +50,10 @@ public class PalindromeCheckerApp {
 
         // ================= UC4 =================
         String input2 = "radar";
-
         char[] chars = input2.toCharArray();
 
         int start = 0;
         int end = chars.length - 1;
-
         boolean isPalindrome2 = true;
 
         while (start < end) {
@@ -71,7 +71,6 @@ public class PalindromeCheckerApp {
 
         // ================= UC5 =================
         String input3 = "noon";
-
         Stack<Character> stack = new Stack<>();
 
         for (char c : input3.toCharArray()) {
@@ -113,5 +112,33 @@ public class PalindromeCheckerApp {
 
         System.out.println("UC6 Input: " + input4);
         System.out.println("UC6 Is Palindrome: " + isPalindrome4);
+        System.out.println();
+
+        // ================= UC7 =================
+        String input5 = "refer";
+
+        Deque<Character> deque = new ArrayDeque<>();
+
+        // Insert characters into deque
+        for (char c : input5.toCharArray()) {
+            deque.addLast(c);
+        }
+
+        boolean isPalindrome5 = true;
+
+        // Compare front and rear
+        while (deque.size() > 1) {
+
+            char first = deque.removeFirst();
+            char last = deque.removeLast();
+
+            if (first != last) {
+                isPalindrome5 = false;
+                break;
+            }
+        }
+
+        System.out.println("UC7 Input: " + input5);
+        System.out.println("UC7 Is Palindrome: " + isPalindrome5);
     }
 }
