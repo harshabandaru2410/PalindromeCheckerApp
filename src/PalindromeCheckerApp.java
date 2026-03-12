@@ -18,7 +18,23 @@ public class PalindromeCheckerApp {
             }
         }
 
-        System.out.println("Input text : " + input);
-        System.out.println("Is it a Palindrome : " + isPalindrome);
+        System.out.println("UC2 Result: " + isPalindrome);
+
+        // UC3
+        String word = "level";
+        String reversed = "";
+
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversed = reversed + word.charAt(i);
+        }
+
+        System.out.println("Original String: " + word);
+        System.out.println("Reversed String: " + reversed);
+
+        if (word.equals(reversed)) {
+            System.out.println("UC3 Result: Palindrome");
+        } else {
+            System.out.println("UC3 Result: Not a Palindrome");
+        }
     }
 }
