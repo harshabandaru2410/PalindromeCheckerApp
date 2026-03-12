@@ -1,4 +1,6 @@
 import java.util.Stack;
+import java.util.Queue;
+import java.util.LinkedList;
 
 public class PalindromeCheckerApp {
 
@@ -41,6 +43,7 @@ public class PalindromeCheckerApp {
         } else {
             System.out.println("UC3 Result: Not a Palindrome");
         }
+
         System.out.println();
 
         // ================= UC4 =================
@@ -86,5 +89,29 @@ public class PalindromeCheckerApp {
 
         System.out.println("UC5 Input: " + input3);
         System.out.println("UC5 Is Palindrome: " + isPalindrome3);
+        System.out.println();
+
+        // ================= UC6 =================
+        String input4 = "civic";
+
+        Queue<Character> queue = new LinkedList<>();
+        Stack<Character> stack2 = new Stack<>();
+
+        for (char c : input4.toCharArray()) {
+            queue.add(c);
+            stack2.push(c);
+        }
+
+        boolean isPalindrome4 = true;
+
+        while (!queue.isEmpty()) {
+            if (queue.remove() != stack2.pop()) {
+                isPalindrome4 = false;
+                break;
+            }
+        }
+
+        System.out.println("UC6 Input: " + input4);
+        System.out.println("UC6 Is Palindrome: " + isPalindrome4);
     }
 }
