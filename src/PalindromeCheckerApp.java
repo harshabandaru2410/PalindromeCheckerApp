@@ -3,6 +3,7 @@ import java.util.Queue;
 import java.util.LinkedList;
 import java.util.Deque;
 import java.util.ArrayDeque;
+import java.util.Scanner;
 
 public class PalindromeCheckerApp {
 
@@ -30,15 +31,19 @@ public class PalindromeCheckerApp {
         System.out.println();
 
         // ================= UC3 =================
-        String word = "level";
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string to check palindrome: ");
+        String word = scanner.nextLine();
+
         String reversed = "";
 
         for (int i = word.length() - 1; i >= 0; i--) {
             reversed = reversed + word.charAt(i);
         }
 
-        System.out.println("UC3 Original String: " + word);
-        System.out.println("UC3 Reversed String: " + reversed);
+        System.out.println("Original String: " + word);
+        System.out.println("Reversed String: " + reversed);
 
         if (word.equals(reversed)) {
             System.out.println("UC3 Result: Palindrome");
